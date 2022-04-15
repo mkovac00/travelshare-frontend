@@ -1,0 +1,82 @@
+{
+    "users": [
+        {
+            "id": "u1",
+            "name": "Mario Kovac",
+            "profilePhoto": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Official_portrait_of_Barack_Obama.jpg/640px-Official_portrait_of_Barack_Obama.jpg",
+            "coverPhoto": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Peaks_between_Hukere_Stream_and_Shift_Creek_valley%2C_Nelson_Lakes_National_Park%2C_New_Zealand.jpg/640px-Peaks_between_Hukere_Stream_and_Shift_Creek_valley%2C_Nelson_Lakes_National_Park%2C_New_Zealand.jpg",
+            "profileDescription": "Heyy, my name is Mario. Follow mee!! :D",
+            "followers": "29",
+            "following": "7"
+        },
+        {
+            "id": "u2",
+            "name": "Ivana Jukic",
+            "profilePhoto": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Official_portrait_of_Barack_Obama.jpg/640px-Official_portrait_of_Barack_Obama.jpg",
+            "coverPhoto": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Peaks_between_Hukere_Stream_and_Shift_Creek_valley%2C_Nelson_Lakes_National_Park%2C_New_Zealand.jpg/640px-Peaks_between_Hukere_Stream_and_Shift_Creek_valley%2C_Nelson_Lakes_National_Park%2C_New_Zealand.jpg",
+            "profileDescription": "Heyy, my name is Ivana. Follow mee!! :D",
+            "followers": "45",
+            "following": "41"
+        },
+        {
+            "id": "u3",
+            "name": "Ivan Bandov",
+            "profilePhoto": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Official_portrait_of_Barack_Obama.jpg/640px-Official_portrait_of_Barack_Obama.jpg",
+            "coverPhoto": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Peaks_between_Hukere_Stream_and_Shift_Creek_valley%2C_Nelson_Lakes_National_Park%2C_New_Zealand.jpg/640px-Peaks_between_Hukere_Stream_and_Shift_Creek_valley%2C_Nelson_Lakes_National_Park%2C_New_Zealand.jpg",
+            "profileDescription": "Heyy, my name is Ivan. Follow mee!! :D",
+            "followers": "15",
+            "following": "10"
+        },
+        {
+            "id": "u4",
+            "name": "Ivan Bandov",
+            "profilePhoto": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Official_portrait_of_Barack_Obama.jpg/640px-Official_portrait_of_Barack_Obama.jpg",
+            "coverPhoto": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Peaks_between_Hukere_Stream_and_Shift_Creek_valley%2C_Nelson_Lakes_National_Park%2C_New_Zealand.jpg/640px-Peaks_between_Hukere_Stream_and_Shift_Creek_valley%2C_Nelson_Lakes_National_Park%2C_New_Zealand.jpg",
+            "profileDescription": "Heyy, my name is IvanB. Follow mee!! :D",
+            "followers": "18",
+            "following": "3"
+        }
+    ],
+    "posts": [
+        {
+            "id": "p1",
+            "creatorName": "Mario Kovac",
+            "creatorProfilePhoto": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Official_portrait_of_Barack_Obama.jpg/640px-Official_portrait_of_Barack_Obama.jpg",
+            "postImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Dubai_Skyline_from_Zabeel_Park.jpg/640px-Dubai_Skyline_from_Zabeel_Park.jpg",
+            "postDescription": "What a beautiful sunset in Dubaii!!! *__*",
+            "postHearts": "19",
+            "postComments": "4",
+            "creator": "u1"
+        },
+        {
+            "id": "p2",
+            "creatorName": "Ivana Jukic",
+            "creatorProfilePhoto": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Official_portrait_of_Barack_Obama.jpg/640px-Official_portrait_of_Barack_Obama.jpg",
+            "postImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Ibn_Bathutha_Mall_of_Dubai.jpg/640px-Ibn_Bathutha_Mall_of_Dubai.jpg",
+            "postDescription": "Inside one of the biggest malls in the world, in Dubai!!",
+            "postHearts": "25",
+            "postComments": "12",
+            "creator": "u2"
+        },
+        {
+            "id": "p3",
+            "creatorName": "Mario Kovac",
+            "creatorProfilePhoto": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Official_portrait_of_Barack_Obama.jpg/640px-Official_portrait_of_Barack_Obama.jpg",
+            "postImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Ibn_Bathutha_Mall_of_Dubai.jpg/640px-Ibn_Bathutha_Mall_of_Dubai.jpg",
+            "postDescription": "In a mall in Dubai!!",
+            "postHearts": "26",
+            "postComments": "4",
+            "creator": "u1"
+        },
+        {
+            "id": "p4",
+            "creatorName": "Ivan Bandov",
+            "creatorProfilePhoto": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Official_portrait_of_Barack_Obama.jpg/640px-Official_portrait_of_Barack_Obama.jpg",
+            "postImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Trebinje%2C_Bosnia_y_Herzegovina%2C_2014-04-14%2C_DD_01.jpg/640px-Trebinje%2C_Bosnia_y_Herzegovina%2C_2014-04-14%2C_DD_01.jpg",
+            "postDescription": "Evo mene u bosni",
+            "postHearts": "126",
+            "postComments": "44",
+            "creator": "u3"
+        }
+    ]
+}

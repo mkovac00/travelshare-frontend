@@ -1,0 +1,10 @@
+.user-edit-form {
+    display: flex; flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-edit-form Input {
+    width: 80vw;
+    max-width: 600px;
+}

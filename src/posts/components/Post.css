@@ -1,0 +1,97 @@
+.cancel-btn {
+  margin-right: 3vw;
+}
+
+.post-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  color: var(--mainTextColor);
+  margin: 30px;
+}
+
+.post-user__info {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 8% 20% 70%;
+  grid-template-rows: 100%;
+  align-items: center;
+}
+
+.post-user__info .post-activity__delete-svg {
+  justify-self: end;
+}
+
+.post-user__profile-image {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.post-user__name {
+  margin: 0 0 0 0px;
+  padding: 0 0 0 5px;
+}
+
+.post-upload__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.post-description {
+  font-size: 1.2rem;
+}
+
+.post-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.post-activity__info {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.post-activity__hearts,
+.post-activity__comments {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding-right: 30px;
+}
+
+.post-activity__heart-svg,
+.post-activity__comment-svg {
+  width: 20px;
+  height: 20px;
+  padding-right: 7px;
+}
+
+.post-activity__delete-svg {
+  width: 20px;
+  height: 20px;
+}
+
+.post-activity__heart-svg:hover,
+.post-activity__comment-svg:hover,
+.post-activity__delete-svg:hover {
+  cursor: pointer;
+}
+
+.post-activity__heart-num,
+.post-activity__comment-num {
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .post-content {
+    margin: 30px 5px;
+  }
+}

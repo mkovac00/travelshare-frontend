@@ -1,0 +1,79 @@
+.share-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: auto;
+  background-color: var(--lightMain);
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  width: 90vw;
+}
+
+.share-top,
+.share-bot {
+  padding-left: 1rem;
+  width: 85%;
+}
+
+.share-top Input {
+  padding-left: 1rem;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.15);
+  color: var(--mainTextColor);
+}
+
+.share-bot {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.share-bot__upload-image {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.share-bot__image-logo {
+  width: 25px;
+  height: 25px;
+  padding-right: 10px;
+}
+
+.share-bot p {
+  display: none;
+  color: var(--mainTextColor);
+}
+
+.share-bot Button {
+  margin: 1rem 0 1rem 0;
+}
+
+.share-bot Button:hover {
+  background-color: var(--thirdColor);
+}
+
+@media (min-width: 768px) and (max-width: 1468px) {
+  .share-container {
+    margin: 0 auto 130px auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .share-container {
+    margin: 0 auto 30px auto;
+    width: 40vw;
+  }
+  .share-top,
+  .share-bot {
+    padding-left: 1rem;
+    width: 90%;
+  }
+  .share-bot p {
+    display: block;
+  }
+}

@@ -1,0 +1,56 @@
+/* .search-page__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} */
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  background-color: var(--lightMain);
+  margin: auto;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+}
+
+.search-container Input {
+  width: 80vw;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.15);
+  color: var(--mainTextColor);
+  padding-left: 10px;
+}
+
+.search-container Button {
+  margin: 1rem;
+}
+
+.search-output {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 80%;
+  margin: 2rem auto;
+}
+
+.search-output__person {
+    margin: 1rem;
+}
+
+@media (min-width: 768px) {
+  .search-container {
+    width: 40%;
+  }
+  .search-container Input {
+    width: 35vw;
+  }
+  .search-output {
+      width: 30%;
+  }
+}
