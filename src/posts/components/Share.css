@@ -31,17 +31,14 @@
   align-items: center;
 }
 
-.share-bot__upload-image {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-}
-
 .share-bot__image-logo {
   width: 25px;
   height: 25px;
   padding-right: 10px;
+}
+
+.share-bot .preview-img {
+  padding-left: 1rem;
 }
 
 .share-bot p {
@@ -75,5 +72,12 @@
   }
   .share-bot p {
     display: block;
+    margin-bottom: 0;
+    margin-left: 1vw;
+  }
+  .share-bot .preview-img {
+    padding-left: 2rem;
+    width: 16rem;
+    height: 16rem;
   }
 }

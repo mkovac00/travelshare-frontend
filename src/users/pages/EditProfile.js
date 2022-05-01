@@ -37,7 +37,8 @@ const EditProfile = () => {
                     description: formState.inputs.description.value
                 }),
                 {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
+                    Authorization: "Bearer " + auth.token,
                 }
             )
             navigate("/profile/" + auth.userId);

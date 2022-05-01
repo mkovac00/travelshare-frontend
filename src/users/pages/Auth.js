@@ -6,6 +6,7 @@ import Input from "../../shared/components/FormElements/Input";
 import Button from "../../shared/components/FormElements/Button";
 import ErrorModal from "../../shared/components/UIElements/ErrorModal";
 import Loading from "../../shared/components/UIElements/Loading";
+import ImageUpload from "../../shared/components/FormElements/ImageUpload";
 import {
   VALIDATOR_EMAIL,
   VALIDATOR_MINLENGTH,
@@ -43,6 +44,7 @@ const Auth = () => {
           ...formState.inputs,
           name: undefined,
           description: undefined,
+          image: undefined,
         },
         formState.inputs.email.isValid && formState.inputs.password.isValid
       );
@@ -58,6 +60,10 @@ const Auth = () => {
             value: "",
             isValid: false,
           },
+          image: {
+            value: null,
+            isValid: false,
+          },
         },
         false
       );
@@ -67,6 +73,8 @@ const Auth = () => {
 
   const authSubmitHandler = async (event) => {
     event.preventDefault();
+
+    console.log(formState.inputs);
 
     if (isLoginMode) {
       try {
@@ -82,26 +90,24 @@ const Auth = () => {
           }
         );
 
-        auth.login(responseData.user.id);
+        auth.login(responseData.userId, responseData.token);
         navigate("/home");
       } catch (err) {}
     } else {
       try {
+        const formData = new FormData();
+        formData.append("name", formState.inputs.name.value);
+        formData.append("email", formState.inputs.email.value);
+        formData.append("password", formState.inputs.password.value);
+        formData.append("description", formState.inputs.description.value);
+        formData.append("image", formState.inputs.image.value);
         const responseData = await sendRequest(
           "http://localhost:5000/api/users/signup",
           "POST",
-          JSON.stringify({
-            name: formState.inputs.name.value,
-            email: formState.inputs.email.value,
-            password: formState.inputs.password.value,
-            description: formState.inputs.description.value,
-          }),
-          {
-            "Content-Type": "application/json",
-          }
+          formData
         );
 
-        auth.login(responseData.user.id);
+        auth.login(responseData.userId, responseData.token);
         navigate("/home");
       } catch (err) {}
     }
@@ -123,6 +129,16 @@ const Auth = () => {
               label="Your Name"
               validators={[VALIDATOR_REQUIRE()]}
               errorText="Please enter a name."
+              onInput={inputHandler}
+            />
+          )}
+          {!isLoginMode && (
+            <ImageUpload
+              column
+              button={true}
+              buttonText="SELECT IMAGE"
+              center
+              id="image"
               onInput={inputHandler}
             />
           )}

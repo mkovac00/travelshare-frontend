@@ -27,6 +27,7 @@ const PostList = (props) => {
             props.users[index].profilePicture ||
             "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Official_portrait_of_Barack_Obama.jpg/640px-Official_portrait_of_Barack_Obama.jpg"
           }
+          // profilePicture={`http://localhost:5000/${props.users[index].profilePicture}`}
           description={post.description}
           image={post.image}
           hearts={post.hearts.length}

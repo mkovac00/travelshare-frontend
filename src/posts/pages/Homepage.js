@@ -21,20 +21,24 @@ const Homepage = () => {
     const fetchUserFollowList = async () => {
       try {
         const responseData = await sendRequest(
-          `http://localhost:5000/api/users/following/${auth.userId}`
+          `http://localhost:5000/api/users/following/${auth.userId}`, "GET", null, {
+            Authorization: "Bearer " + auth.token,
+          }
         );
 
         setLoadedFollowList(responseData.following);
       } catch (err) {}
     };
     fetchUserFollowList();
-  }, [sendRequest, auth.userId]);
+  }, [sendRequest, auth.userId, auth.token]);
 
   useEffect(() => {
     const fetchTimelinePosts = async () => {
       try {
         const responseData = await sendRequest(
-          `http://localhost:5000/api/posts/user/timeline/${auth.userId}`
+          `http://localhost:5000/api/posts/user/timeline/${auth.userId}`, "GET", null, {
+            Authorization: "Bearer " + auth.token,
+          }
         );
 
         setLoadedPosts(responseData.posts);
@@ -42,7 +46,7 @@ const Homepage = () => {
       } catch (err) {}
     };
     fetchTimelinePosts();
-  }, [sendRequest, auth.userId]);
+  }, [sendRequest, auth.userId, auth.token]);
 
   return (
     <React.Fragment>

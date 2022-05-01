@@ -1,9 +1,9 @@
-import React, { useState, useCallback } from "react";
+import React from "react";
 import {
   BrowserRouter as Router,
   Route,
   Navigate,
-  Routes
+  Routes,
 } from "react-router-dom";
 
 import MainNavigation from "./shared/components/Navigation/MainNavigation";
@@ -14,25 +14,15 @@ import Profile from "./users/pages/Profile";
 import Search from "./users/components/Search";
 import EditProfile from "./users/pages/EditProfile";
 import { AuthContext } from "./shared/context/auth-context";
+import { useAuth } from "./shared/hooks/auth-hook";
 
 import "./App.css";
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [userId, setUserId] = useState(null);
-
-  const login = useCallback((uid) => {
-    setIsLoggedIn(true);
-    setUserId(uid);
-  }, []);
-
-  const logout = useCallback(() => {
-    setIsLoggedIn(false);
-    setUserId(null);
-  }, []);
+  const { token, login, logout, userId } = useAuth();
 
   let routes;
-  if (isLoggedIn) {
+  if (token) {
     routes = (
       <Routes>
         <Route path="/home" exact element={<Homepage />} />
@@ -54,7 +44,13 @@ function App() {
 
   return (
     <AuthContext.Provider
-      value={{ isLoggedIn: isLoggedIn, userId: userId, login: login, logout: logout }}
+      value={{
+        isLoggedIn: !!token,
+        token: token,
+        userId: userId,
+        login: login,
+        logout: logout,
+      }}
     >
       <Router>
         <MainNavigation />

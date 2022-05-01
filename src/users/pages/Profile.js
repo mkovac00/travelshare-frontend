@@ -31,6 +31,7 @@ const Profile = () => {
         }),
         {
           "Content-Type": "application/json",
+          Authorization: "Bearer " + auth.token,
         }
       );
     } catch (err) {}
@@ -41,12 +42,17 @@ const Profile = () => {
       const responseData = await sendRequest(
         `http://localhost:5000/api/users/${uid}/isfollowed?userId=${encodeURIComponent(
           auth.userId
-        )}`
+        )}`,
+        "GET",
+        null,
+        {
+          Authorization: "Bearer " + auth.token,
+        }
       );
 
       setIsFollowed(responseData.isFollowed);
     } catch (err) {}
-  }, [auth.userId, uid, sendRequest]);
+  }, [auth.userId, uid, sendRequest, auth.token]);
 
   useEffect(() => {
     seeIsFollowed();
@@ -56,20 +62,30 @@ const Profile = () => {
     const fetchUserData = async () => {
       try {
         const responseData = await sendRequest(
-          `http://localhost:5000/api/users/${uid}`
+          `http://localhost:5000/api/users/${uid}`,
+          "GET",
+          null,
+          {
+            Authorization: "Bearer " + auth.token,
+          }
         );
 
         setLoadedUser(responseData.user);
       } catch (err) {}
     };
     fetchUserData();
-  }, [sendRequest, uid]);
+  }, [sendRequest, uid, auth.token]);
 
   useEffect(() => {
     const fetchUserPosts = async () => {
       try {
         const responseData = await sendRequest(
-          `http://localhost:5000/api/posts/user/${uid}`
+          `http://localhost:5000/api/posts/user/${uid}`,
+          "GET",
+          null,
+          {
+            Authorization: "Bearer " + auth.token,
+          }
         );
 
         setLoadedPosts(responseData.posts);
@@ -77,7 +93,7 @@ const Profile = () => {
       } catch (err) {}
     };
     fetchUserPosts();
-  }, [sendRequest, uid]);
+  }, [sendRequest, uid, auth.token]);
 
   return (
     <React.Fragment>
@@ -98,7 +114,7 @@ const Profile = () => {
             <div className="profile-top__profile-photo-container">
               <img
                 className="profile-top__profile-photo"
-                src={loadedUser.profilePicture}
+                src={`http://localhost:5000/${loadedUser.profilePicture}`}
                 alt="profile"
               />
             </div>

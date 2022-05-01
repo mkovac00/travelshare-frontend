@@ -12,7 +12,7 @@ const Follow = (props) => {
     <Link to={`/profile/${props.id}`}>
       <Card className={`follow-card ${props.className}`}>
         <div className="follow-leftside">
-          <img className="follow-photo" src={props.profilePhoto} alt="Profile" />
+          <img className="follow-photo" src={`http://localhost:5000/${props.profilePhoto}`} alt="Profile" />
           <p className="follow-name">{props.name}</p>
         </div>
         <div className="follow-rightside">

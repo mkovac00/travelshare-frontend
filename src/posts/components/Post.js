@@ -33,7 +33,11 @@ const Post = (props) => {
     try {
       await sendRequest(
         `http://localhost:5000/api/posts/${props.id}`,
-        "DELETE"
+        "DELETE",
+        null,
+        {
+          Authorization: "Bearer " + auth.token,
+        }
       );
       window.location.reload();
     } catch (err) {}
@@ -49,6 +53,7 @@ const Post = (props) => {
         }),
         {
           "Content-Type": "application/json",
+          Authorization: "Bearer " + auth.token,
         }
       );
       setHeartCount(responseData.hearts.length);
@@ -61,12 +66,17 @@ const Post = (props) => {
       const responseData = await sendRequest(
         `http://localhost:5000/api/posts/${
           props.id
-        }/ishearted?userId=${encodeURIComponent(auth.userId)}`
+        }/ishearted?userId=${encodeURIComponent(auth.userId)}`,
+        "GET",
+        null,
+        {
+          Authorization: "Bearer " + auth.token,
+        }
       );
 
-      setIsHearted(responseData.isHearted)
+      setIsHearted(responseData.isHearted);
     } catch (err) {}
-  }, [auth.userId, props.id, sendRequest])
+  }, [auth.userId, props.id, sendRequest, auth.token]);
 
   useEffect(() => {
     seeIsHearted();
@@ -104,7 +114,8 @@ const Post = (props) => {
           <div className="post-user__info">
             <img
               className="post-user__profile-image"
-              src={props.profilePicture}
+              // src={props.profilePicture}
+              src={`http://localhost:5000/${props.profilePicture}`}
               alt="profile"
             />
             <h3 className="post-user__name">{props.name}</h3>
@@ -119,25 +130,28 @@ const Post = (props) => {
           </div>
           <div className="post-upload__info">
             <p className="post-description">{props.description}</p>
-            <img className="post-image" src={props.image} alt="post" />
+            <img
+              className="post-image"
+              src={`http://localhost:5000/${props.image}`}
+              alt="post"
+            />
           </div>
           <div className="post-activity__info">
             <div className="post-activity__hearts">
-              {isHearted && (
+              {isHearted ? (
                 <img
-                className="post-activity__heart-svg"
-                src={heartSymbol}
-                alt="heart"
-                onClick={heartHandler}
-              />
-              )}
-              {!isHearted && (
+                  className="post-activity__heart-svg"
+                  src={heartSymbol}
+                  alt="heart"
+                  onClick={heartHandler}
+                />
+              ) : (
                 <img
-                className="post-activity__heart-svg"
-                src={darkHeartSymbol}
-                alt="heart"
-                onClick={heartHandler}
-              />
+                  className="post-activity__heart-svg"
+                  src={darkHeartSymbol}
+                  alt="heart"
+                  onClick={heartHandler}
+                />
               )}
               <p className="post-activity__heart-num">
                 {heartCount} {heartCount === 1 ? "Heart" : "Hearts"}

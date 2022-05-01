@@ -4,6 +4,7 @@ import Input from "../../shared/components/FormElements/Input";
 import Button from "../../shared/components/FormElements/Button";
 import ErrorModal from "../../shared/components/UIElements/ErrorModal";
 import Loading from "../../shared/components/UIElements/Loading";
+import ImageUpload from "../../shared/components/FormElements/ImageUpload";
 import { useForm } from "../../shared/hooks/form-hook";
 import { VALIDATOR_REQUIRE } from "../../shared/util/validators";
 import { useHttpClient } from "../../shared/hooks/http-hook";
@@ -22,6 +23,10 @@ const Share = () => {
         value: "",
         isValid: false,
       },
+      image: {
+        value: null,
+        isValid: false,
+      },
     },
     false
   );
@@ -29,24 +34,28 @@ const Share = () => {
   const postSubmitHandler = async (event) => {
     event.preventDefault();
     try {
-      await sendRequest(
-        "http://localhost:5000/api/posts",
-        "POST",
-        JSON.stringify({
-          description: formState.inputs.description.value,
-          creator: auth.userId,
-        }),
-        {
-          "Content-Type": "application/json",
-        }
-      );
-      setFormData({
-        description: {
-          value: "",
-          isValid: false,
-        },
+      const formData = new FormData();
+      formData.append("description", formState.inputs.description.value);
+      formData.append("image", formState.inputs.image.value);
+      await sendRequest("http://localhost:5000/api/posts", "POST", formData, {
+        Authorization: "Bearer " + auth.token,
       });
     } catch (err) {}
+
+    removeFormDataAfterPosting();
+  };
+
+  const removeFormDataAfterPosting = () => {
+    setFormData({
+      description: {
+        value: "",
+        isValid: false,
+      },
+      image: {
+        value: null,
+        isValid: false,
+      },
+    });
   };
 
   return (
@@ -64,19 +73,25 @@ const Share = () => {
             errorText="Every photo needs its description!"
             onInput={inputHandler}
           />
-        </div>
-        <div className="share-bot">
-          <a className="share-bot__upload-image">
-            <img
-              className="share-bot__image-logo"
-              src={uploadImageLogo}
-              alt="Upload"
-            />
-            <p>Upload an image</p>
-          </a>
           <Button type="submit" disabled={!formState.isValid}>
             Share
           </Button>
+        </div>
+        <div className="share-bot">
+          <ImageUpload
+            id="image"
+            onInput={inputHandler}
+            button={true}
+            buttonText={
+              // <img
+              //   className="share-bot__image-logo"
+              //   src={uploadImageLogo}
+              //   alt="Upload"
+              // />
+              "SELECT IMAGE"
+            }
+            center
+          />
         </div>
       </form>
     </React.Fragment>

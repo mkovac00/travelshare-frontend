@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 
 import Card from "../../shared/components/UIElements/Card";
 import Input from "../../shared/components/FormElements/Input";
@@ -9,10 +9,12 @@ import { VALIDATOR_REQUIRE } from "../../shared/util/validators";
 import { useHttpClient } from "../../shared/hooks/http-hook";
 import ErrorModal from "../../shared/components/UIElements/ErrorModal";
 import Loading from "../../shared/components/UIElements/Loading";
+import { AuthContext } from "../../shared/context/auth-context";
 
 import "./Search.css";
 
 const Search = () => {
+  const auth = useContext(AuthContext);
   const [searchedPeople, setSearchedPeople] = useState([]);
   const { isLoading, error, sendRequest, clearError } = useHttpClient();
   const [formState, inputHandler] = useForm(
@@ -31,7 +33,12 @@ const Search = () => {
       const responseData = await sendRequest(
         `http://localhost:5000/api/users/search/?name=${encodeURIComponent(
           formState.inputs.name.value
-        )}`
+        )}`,
+        "GET",
+        null,
+        {
+          Authorization: "Bearer " + auth.token,
+        }
       );
 
       setSearchedPeople(responseData.users);
