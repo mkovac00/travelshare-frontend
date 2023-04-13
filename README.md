@@ -1,6 +1,6 @@
 # Travelshare
 
-MyNews is a full-stack Web application coded and designed fully and solely by me.  
+Travelshare is a full-stack Web application coded and designed fully and solely by me.  
 Travelshare was my Senior thesis for finishing the University and getting the bachelor's degree.  
 I received the highest grade for the thesis :)
 
@@ -8,7 +8,7 @@ I received the highest grade for the thesis :)
 
 ### What is Travelshare
 
-MyNews is a social media Web application that allows you to share photos of your latest travels, or well, any travels you'd like. It also allows you to browse other people's posts, "heart" those posts, follow other users and visit any registered user's profile.
+Travelshare is a social media Web application that allows you to share photos of your latest travels, or well, any travels you'd like. It also allows you to browse other people's posts, "heart" those posts, follow other users and visit any registered user's profile.
 
 ### Technologies used
 
