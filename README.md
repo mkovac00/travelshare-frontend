@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# Travelshare
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+MyNews is a full-stack Web application coded and designed fully and solely by me.  
+Travelshare was my Senior thesis for finishing the University and getting the bachelor's degree.  
+I received the highest grade for the thesis :)
 
-## Available Scripts
+# Description
 
-In the project directory, you can run:
+### What is Travelshare
 
-### `npm start`
+MyNews is a social media Web application that allows you to share photos of your latest travels, or well, any travels you'd like. It also allows you to browse other people's posts, "heart" those posts, follow other users and visit any registered user's profile.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Technologies used
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+To create Travelshare I've used React combined with JavaScript and plain CSS for styling the application.
 
-### `npm test`
+### Project structure approach
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+I structured the application in 3 different directories.
 
-### `npm run build`
+Posts directory for components and layouts related to user posts.  
+Users directory for components and layouts related to users, such as user profile etc.  
+Shared directory for components and layouts shared throughout the whole project, meaning that they are used in both the components related to users and components related to posts.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The assets directory contains necessary assets such as images, svg's or any additional application data.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Design decisions
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+When it came down to designing Travelshare, I decided to use bright, pastel colors with a very modern approach of slightly curved edges of items on the page because I thought it provides an easy on the eyes, soft experience.  
+I used pastel light blue, HEX code #85CBCC, as my main color for the application.  
+The application doesn't display a lot of elements at once inside the browser window. My reasoning for that was making the application simple and intuitive for the end user, not cluttering the viewport with needless elements and distractions.
 
-### `npm run eject`
+### Project challenges
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+This whole project was, at that time, by far my greatest and most difficult project.  
+It included structing a whole application both for frontend and backend. I've used many resources and watched many tutorials to have this working at the end.  
+I've used custom hooks, different sorts of middleware and application context for the first time while building this.  
+It was an amazing learning experience for me, learning a lot about React and how React works and it also allowed me to learn basics of backend development as well.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+After everything was built, I also learned how to deploy an application, both frontend and backend.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# How to check out the project
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Ever since Heroku stopped providing their free tier, the application has been shut down so there is currently no way of viewing the application besides cloning the project locally and running it.  
+I do have to note that the project was built a while ago and has not been, nor is currently being maintained so most of the dependencies are outdated.
 
-## Learn More
+# Status
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Project is fully finished.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# License
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+MIT
